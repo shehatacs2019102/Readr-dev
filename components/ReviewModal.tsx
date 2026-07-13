@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
+import { addReview as saveReview } from "@/app/actions";
 type Review = {
   id: string;
   reviewer: string;
@@ -50,21 +50,30 @@ export default function ReviewModal({
     </span>
   );
 
-  const addReview = () => {
+ const addReview = async () => {
     if (!name.trim() || !body.trim()) return;
-    const newReview: Review = {
-      id: `r-${Date.now()}`,
+
+    // optimistic: show it immediately
+    const optimistic: Review = {
+      id: `temp-${Date.now()}`,
       reviewer: name.trim(),
       rating,
       body: body.trim(),
       agrees: 0,
     };
-    setReviews([newReview, ...reviews]);
+    setReviews([optimistic, ...reviews]);
     setName("");
     setBody("");
     setRating(5);
-  };
 
+    // persist to the database
+    await saveReview({
+      bookId: book.id,
+      reviewer: optimistic.reviewer,
+      rating: optimistic.rating,
+      body: optimistic.body,
+    });
+  };
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
