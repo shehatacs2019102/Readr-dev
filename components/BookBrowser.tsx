@@ -14,6 +14,7 @@ type Book = {
   reviewCount: number;
   color: string;
   genre: string;
+  coverUrl?: string | null;
   reviews?: Review[];   // ← add
 };
 

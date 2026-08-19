@@ -5,6 +5,7 @@ type Book = {
   rating: number;
   reviewCount: number;
   color: string;
+  coverUrl?: string | null;
 };
 
 export default function BookCard({
@@ -16,13 +17,21 @@ export default function BookCard({
 }) {
   return (
     <button onClick={onClick} className="group w-full cursor-pointer text-left">
-      <div
-        className={`${book.color} mb-2.5 flex aspect-[2/3] items-end rounded-md p-3 transition-transform group-hover:-translate-y-1`}
-      >
-        <span className="text-[15px] font-medium leading-tight">
-          {book.title}
-        </span>
-      </div>
+      {book.coverUrl ? (
+        <img
+          src={book.coverUrl}
+          alt={`Cover of ${book.title}`}
+          className="mb-2.5 aspect-[2/3] w-full rounded-md object-cover transition-transform group-hover:-translate-y-1"
+        />
+      ) : (
+        <div
+          className={`${book.color} mb-2.5 flex aspect-[2/3] items-end rounded-md p-3 transition-transform group-hover:-translate-y-1`}
+        >
+          <span className="text-[15px] font-medium leading-tight">
+            {book.title}
+          </span>
+        </div>
+      )}
       <p className="text-sm font-medium">{book.title}</p>
       <p className="mb-1.5 text-[13px] text-neutral-500">{book.author}</p>
       <div className="flex items-center gap-1 text-[13px]">
