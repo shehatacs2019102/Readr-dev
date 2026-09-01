@@ -28,7 +28,7 @@ const books = dbBooks.map((b, i) => {
     rating,
     reviewCount,
     color: colors[i % colors.length],
-    genre: "Fiction",
+    genre: b.genre,
     coverUrl: b.coverUrl,
     reviews: b.reviews.map((r) => ({
       id: r.id,

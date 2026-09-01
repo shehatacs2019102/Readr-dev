@@ -1,0 +1,147 @@
+
+> bookmarkd@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://172.16.0.2:3000
+- Environments: .env
+✓ Ready in 1319ms
+
+⨯ Error [PrismaClientInitializationError]: 
+Invalid `{imported module ./lib/prisma.ts}["prisma"].book.findMany()` invocation in
+C:\Users\Media Tech\Documents\bookmarkd\.next\dev\server\chunks\ssr\[root-of-the-server]__1-x-2gt._.js:76:152
+
+  73 ;
+  74 ;
+  75 async function Home() {
+→ 76     const dbBooks = await {imported module ./lib/prisma.ts}["prisma"].book.findMany(
+Can't reach database server at `ep-orange-heart-asy7r4zc-pooler.c-4.eu-central-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-orange-heart-asy7r4zc-pooler.c-4.eu-central-1.aws.neon.tech:5432`.
+    at <unknown> (app\page.tsx:5:35)
+    at async Home (app\page.tsx:5:17)
+  3 |
+  4 | export default async function Home() {
+> 5 | const dbBooks = await prisma.book.findMany({
+    |                                   ^
+  6 |   include: { reviews: true },
+  7 | });
+  8 |   // Map DB records into the shape BookBrowser expects {
+  clientVersion: '6.19.3',
+  errorCode: undefined,
+  retryable: undefined,
+  digest: '2811242634'
+}
+⨯ Error [PrismaClientInitializationError]: 
+Invalid `{imported module ./lib/prisma.ts}["prisma"].book.findMany()` invocation in
+C:\Users\Media Tech\Documents\bookmarkd\.next\dev\server\chunks\ssr\[root-of-the-server]__1-x-2gt._.js:76:152
+
+  73 ;
+  74 ;
+  75 async function Home() {
+→ 76     const dbBooks = await {imported module ./lib/prisma.ts}["prisma"].book.findMany(
+Can't reach database server at `ep-orange-heart-asy7r4zc-pooler.c-4.eu-central-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-orange-heart-asy7r4zc-pooler.c-4.eu-central-1.aws.neon.tech:5432`.
+    at <unknown> (app\page.tsx:5:35)
+    at async Home (app\page.tsx:5:17)
+  3 |
+  4 | export default async function Home() {
+> 5 | const dbBooks = await prisma.book.findMany({
+    |                                   ^
+  6 |   include: { reviews: true },
+  7 | });
+  8 |   // Map DB records into the shape BookBrowser expects {
+  clientVersion: '6.19.3',
+  errorCode: undefined,
+  retryable: undefined,
+  digest: '2811242634'
+}
+ GET / 500 in 883ms (next.js: 15ms, application-code: 868ms)
+ GET / 500 in 6.2s (next.js: 498ms, application-code: 5.7s)
+[browser] Uncaught PrismaClientInitializationError: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].book.findMany()` invocation in
+C:\Users\Media Tech\Documents\bookmarkd\.next\dev\server\chunks\ssr\[root-of-the-server]__1-x-2gt._.js:76:152
+
+  73 ;
+  74 ;
+  75 async function Home() {
+→ 76     const dbBooks = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["prisma"].book.findMany(
+Can't reach database server at `ep-orange-heart-asy7r4zc-pooler.c-4.eu-central-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-orange-heart-asy7r4zc-pooler.c-4.eu-central-1.aws.neon.tech:5432`.
+    at <unknown> (app\page.tsx:5:35)
+    at  Home (app\page.tsx:5:17)
+    at resolveErrorDev (file://C:/Users/Media Tech/Documents/bookmarkd/.next/dev/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js:1919:105)
+    at processFullStringRow (file://C:/Users/Media Tech/Documents/bookmarkd/.next/dev/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js:2434:29)
+    at processFullBinaryRow (file://C:/Users/Media Tech/Documents/bookmarkd/.next/dev/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js:2393:9)
+    at processBinaryChunk (file://C:/Users/Media Tech/Documents/bookmarkd/.next/dev/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js:2502:221)
+    at progress (file://C:/Users/Media Tech/Documents/bookmarkd/.next/dev/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js:2689:13)
+  3 |
+  4 | export default async function Home() {
+> 5 | const dbBooks = await prisma.book.findMany({
+    |                                   ^
+  6 |   include: { reviews: true },
+  7 | });
+  8 |   // Map DB records into the shape BookBrowser expects
+⨯ Error [PrismaClientInitializationError]: 
+Invalid `{imported module ./lib/prisma.ts}["prisma"].book.findMany()` invocation in
+C:\Users\Media Tech\Documents\bookmarkd\.next\dev\server\chunks\ssr\[root-of-the-server]__1-x-2gt._.js:76:152
+
+  73 ;
+  74 ;
+  75 async function Home() {
+→ 76     const dbBooks = await {imported module ./lib/prisma.ts}["prisma"].book.findMany(
+Can't reach database server at `ep-orange-heart-asy7r4zc-pooler.c-4.eu-central-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-orange-heart-asy7r4zc-pooler.c-4.eu-central-1.aws.neon.tech:5432`.
+    at <unknown> (app\page.tsx:5:35)
+    at async Home (app\page.tsx:5:17)
+  3 |
+  4 | export default async function Home() {
+> 5 | const dbBooks = await prisma.book.findMany({
+    |                                   ^
+  6 |   include: { reviews: true },
+  7 | });
+  8 |   // Map DB records into the shape BookBrowser expects {
+  clientVersion: '6.19.3',
+  errorCode: undefined,
+  retryable: undefined,
+  digest: '2811242634'
+}
+ GET / 500 in 5.3s (next.js: 13ms, application-code: 5.3s)
+⨯ Error [PrismaClientInitializationError]: 
+Invalid `{imported module ./lib/prisma.ts}["prisma"].book.findMany()` invocation in
+C:\Users\Media Tech\Documents\bookmarkd\.next\dev\server\chunks\ssr\[root-of-the-server]__1-x-2gt._.js:76:152
+
+  73 ;
+  74 ;
+  75 async function Home() {
+→ 76     const dbBooks = await {imported module ./lib/prisma.ts}["prisma"].book.findMany(
+Can't reach database server at `ep-orange-heart-asy7r4zc-pooler.c-4.eu-central-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-orange-heart-asy7r4zc-pooler.c-4.eu-central-1.aws.neon.tech:5432`.
+    at <unknown> (app\page.tsx:5:35)
+    at async Home (app\page.tsx:5:17)
+  3 |
+  4 | export default async function Home() {
+> 5 | const dbBooks = await prisma.book.findMany({
+    |                                   ^
+  6 |   include: { reviews: true },
+  7 | });
+  8 |   // Map DB records into the shape BookBrowser expects {
+  clientVersion: '6.19.3',
+  errorCode: undefined,
+  retryable: undefined,
+  digest: '2811242634'
+}
+ GET / 500 in 5.5s (next.js: 11ms, application-code: 5.5s)
+ GET / 200 in 2.4s (next.js: 12ms, application-code: 2.4s)
+ GET / 200 in 286ms (next.js: 10ms, application-code: 276ms)
+ GET / 200 in 267ms (next.js: 10ms, application-code: 257ms)
+ GET / 200 in 281ms (next.js: 9ms, application-code: 272ms)
+ GET / 200 in 253ms (next.js: 11ms, application-code: 242ms)
+ GET / 200 in 308ms (next.js: 11ms, application-code: 297ms)
+ GET / 200 in 357ms (next.js: 9ms, application-code: 348ms)
+[?25h

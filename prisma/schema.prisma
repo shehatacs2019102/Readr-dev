@@ -25,6 +25,7 @@ model Book {
   author      String
   description String?
   coverUrl    String?
+  genre       String   @default("Fiction")
   reviews     Review[]
   createdAt   DateTime @default(now())
 }
