@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import BookCard from "@/components/BookCard";
-import ReviewModal from "@/components/ReviewModal";   // ← add
+import ReviewModal from "@/components/ReviewModal";
+import { genres as allGenres } from "@/lib/genres";
 
 type Review = { id: string; reviewer: string; rating: number; body: string; agrees: number };
 
@@ -18,7 +19,7 @@ type Book = {
   reviews?: Review[];   // ← add
 };
 
-const genres = ["All", "Fiction", "Sci-fi", "Non-fiction", "Fantasy"];
+const genres = ["All", ...allGenres];
 
 export default function BookBrowser({ books }: { books: Book[] }) {
   const [query, setQuery] = useState("");

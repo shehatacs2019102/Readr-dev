@@ -1,4 +1,5 @@
 import BookBrowser from "@/components/BookBrowser";
+import AddBookButton from "@/components/AddBookButton";
 import { prisma } from "@/lib/prisma";
 
 export default async function Home() {
@@ -46,9 +47,7 @@ const books = dbBooks.map((b, i) => {
           <h1 className="text-3xl font-medium tracking-tight">Browse books</h1>
           <p className="mt-1 text-sm text-neutral-500">{books.length} books</p>
         </div>
-        <button className="rounded-md border border-neutral-300 px-4 py-2 text-sm font-medium transition-colors hover:bg-neutral-100">
-          + Add a book
-        </button>
+        <AddBookButton />
       </div>
 
       <BookBrowser books={books} />
