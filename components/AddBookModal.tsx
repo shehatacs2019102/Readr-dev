@@ -5,7 +5,7 @@ import { addBook, type AddBookState } from "@/app/actions";
 import { genres } from "@/lib/genres";
 
 const inputClass =
-  "h-9 w-full rounded-md border border-neutral-300 px-3 text-sm outline-none focus:border-neutral-500";
+  "h-9 w-full rounded-md border border-line px-3 text-sm outline-none placeholder:text-faint focus:border-focus";
 
 export default function AddBookModal({ onClose }: { onClose: () => void }) {
   const [state, formAction, pending] = useActionState<AddBookState, FormData>(
@@ -32,11 +32,11 @@ export default function AddBookModal({ onClose }: { onClose: () => void }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-overlay p-4"
       onClick={onClose}
     >
       <div
-        className="max-h-[85vh] w-full max-w-lg overflow-y-auto rounded-xl bg-white p-6"
+        className="max-h-[85vh] w-full max-w-lg overflow-y-auto rounded-xl bg-surface p-6"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-4 flex items-start justify-between">
@@ -44,7 +44,7 @@ export default function AddBookModal({ onClose }: { onClose: () => void }) {
           <button
             onClick={onClose}
             aria-label="Close"
-            className="rounded-md px-2 py-1 text-lg text-neutral-500 hover:bg-neutral-100"
+            className="rounded-md px-2 py-1 text-lg text-muted hover:bg-hover"
           >
             ×
           </button>
@@ -87,25 +87,25 @@ export default function AddBookModal({ onClose }: { onClose: () => void }) {
             name="description"
             rows={3}
             placeholder="Short description (optional)"
-            className="w-full resize-none rounded-md border border-neutral-300 px-3 py-2 text-sm outline-none focus:border-neutral-500"
+            className="w-full resize-none rounded-md border border-line px-3 py-2 text-sm outline-none placeholder:text-faint focus:border-focus"
           />
 
           {state.error && (
-            <p className="text-sm text-red-600">{state.error}</p>
+            <p className="text-sm text-danger">{state.error}</p>
           )}
 
           <div className="flex justify-end gap-2 pt-1">
             <button
               type="button"
               onClick={onClose}
-              className="rounded-md border border-neutral-300 px-4 py-2 text-sm font-medium transition-colors hover:bg-neutral-100"
+              className="rounded-md border border-line px-4 py-2 text-sm font-medium transition-colors hover:bg-hover"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={pending}
-              className="rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-40"
+              className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-accent-fg transition-opacity hover:opacity-90 disabled:opacity-40"
             >
               {pending ? "Adding…" : "Add book"}
             </button>

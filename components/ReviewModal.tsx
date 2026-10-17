@@ -39,22 +39,22 @@ export default function ReviewModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-overlay p-4"
       onClick={onClose}
     >
       <div
-        className="max-h-[85vh] w-full max-w-lg overflow-y-auto rounded-xl bg-white p-6"
+        className="max-h-[85vh] w-full max-w-lg overflow-y-auto rounded-xl bg-surface p-6"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-4 flex items-start justify-between">
           <div>
             <h2 className="text-xl font-medium tracking-tight">{book.title}</h2>
-            <p className="text-sm text-neutral-500">{book.author}</p>
+            <p className="text-sm text-muted">{book.author}</p>
           </div>
           <button
             onClick={onClose}
             aria-label="Close"
-            className="rounded-md px-2 py-1 text-lg text-neutral-500 hover:bg-neutral-100"
+            className="rounded-md px-2 py-1 text-lg text-muted hover:bg-hover"
           >
             ×
           </button>
@@ -69,7 +69,7 @@ export default function ReviewModal({
 
         <a
           href={`/books/${book.id}`}
-          className="mt-4 inline-block text-sm font-medium text-blue-600 hover:underline"
+          className="mt-4 inline-block text-sm font-medium text-link hover:underline"
         >
           See full page →
         </a>

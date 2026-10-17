@@ -10,7 +10,7 @@ export default function AddBookButton() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="rounded-md border border-neutral-300 px-4 py-2 text-sm font-medium transition-colors hover:bg-neutral-100"
+        className="rounded-md border border-line px-4 py-2 text-sm font-medium transition-colors hover:bg-hover"
       >
         + Add a book
       </button>

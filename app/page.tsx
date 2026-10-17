@@ -45,7 +45,7 @@ const books = dbBooks.map((b, i) => {
       <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
         <div>
           <h1 className="text-3xl font-medium tracking-tight">Browse books</h1>
-          <p className="mt-1 text-sm text-neutral-500">{books.length} books</p>
+          <p className="mt-1 text-sm text-muted">{books.length} books</p>
         </div>
         <AddBookButton />
       </div>

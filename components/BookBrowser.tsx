@@ -48,12 +48,12 @@ export default function BookBrowser({ books }: { books: Book[] }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search by title or author"
-          className="h-10 flex-1 rounded-md border border-neutral-300 px-3 text-sm outline-none focus:border-neutral-500"
+          className="h-10 flex-1 rounded-md border border-line px-3 text-sm outline-none placeholder:text-faint focus:border-focus"
         />
         <select
           value={sort}
           onChange={(e) => setSort(e.target.value)}
-          className="h-10 rounded-md border border-neutral-300 px-3 text-sm"
+          className="h-10 rounded-md border border-line px-3 text-sm"
         >
           <option value="reviews">Most reviewed</option>
           <option value="rating">Highest rated</option>
@@ -67,8 +67,8 @@ export default function BookBrowser({ books }: { books: Book[] }) {
             onClick={() => setGenre(g)}
             className={
               genre === g
-                ? "rounded-md bg-neutral-900 px-3.5 py-1.5 text-[13px] font-medium text-white"
-                : "rounded-md border border-neutral-300 px-3.5 py-1.5 text-[13px] text-neutral-600 transition-colors hover:bg-neutral-100"
+                ? "rounded-md bg-accent px-3.5 py-1.5 text-[13px] font-medium text-accent-fg"
+                : "rounded-md border border-line px-3.5 py-1.5 text-[13px] text-muted transition-colors hover:bg-hover"
             }
           >
             {g}
@@ -87,7 +87,7 @@ export default function BookBrowser({ books }: { books: Book[] }) {
           ))}
         </div>
       ) : (
-        <p className="py-12 text-center text-neutral-500">
+        <p className="py-12 text-center text-muted">
           No books match your search.
         </p>
       )}

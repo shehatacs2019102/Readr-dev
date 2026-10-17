@@ -27,7 +27,7 @@ export default async function BookPage({
     <main className="mx-auto max-w-3xl px-6 py-10">
       <Link
         href="/"
-        className="mb-6 inline-block text-sm text-neutral-500 hover:text-neutral-900"
+        className="mb-6 inline-block text-sm text-muted hover:text-foreground"
       >
         ← Back to books
       </Link>
@@ -40,7 +40,7 @@ export default async function BookPage({
             className="aspect-[2/3] w-40 shrink-0 rounded-md object-cover"
           />
         ) : (
-          <div className="flex aspect-[2/3] w-40 shrink-0 items-end rounded-md bg-neutral-200 p-3">
+          <div className="flex aspect-[2/3] w-40 shrink-0 items-end rounded-md bg-hover p-3">
             <span className="text-[15px] font-medium leading-tight">
               {book.title}
             </span>
@@ -48,18 +48,18 @@ export default async function BookPage({
         )}
 
         <div>
-          <span className="mb-2 inline-block rounded-md border border-neutral-300 px-2.5 py-1 text-xs font-medium text-neutral-600">
+          <span className="mb-2 inline-block rounded-md border border-line px-2.5 py-1 text-xs font-medium text-muted">
             {book.genre}
           </span>
           <h1 className="text-2xl font-medium tracking-tight">{book.title}</h1>
-          <p className="text-sm text-neutral-500">{book.author}</p>
+          <p className="text-sm text-muted">{book.author}</p>
           <div className="mt-2 flex items-center gap-1 text-sm">
-            <span className="text-amber-500">★</span>
+            <span className="text-star">★</span>
             {rating.toFixed(1)}
-            <span className="text-neutral-400">· {reviewCount} reviews</span>
+            <span className="text-faint">· {reviewCount} reviews</span>
           </div>
           {book.description && (
-            <p className="mt-4 text-sm text-neutral-600">{book.description}</p>
+            <p className="mt-4 text-sm text-muted">{book.description}</p>
           )}
         </div>
       </div>

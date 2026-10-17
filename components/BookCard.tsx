@@ -33,11 +33,11 @@ export default function BookCard({
         </div>
       )}
       <p className="text-sm font-medium">{book.title}</p>
-      <p className="mb-1.5 text-[13px] text-neutral-500">{book.author}</p>
+      <p className="mb-1.5 text-[13px] text-muted">{book.author}</p>
       <div className="flex items-center gap-1 text-[13px]">
-        <span className="text-amber-500">★</span>
+        <span className="text-star">★</span>
         {book.rating.toFixed(1)}
-        <span className="text-neutral-400">· {book.reviewCount}</span>
+        <span className="text-faint">· {book.reviewCount}</span>
       </div>
     </button>
   );
